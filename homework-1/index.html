@@ -56,22 +56,26 @@
       <div class="form">
 
         <p>Cardholder Name</p>
-        <input placeholder="e.g. Jane Appleseed"></input>
+        <input id="cardHolderName" placeholder="e.g. Jane Appleseed"></input>
+        
 
         <p>Card Number</p>
-        <input placeholder="e.g. 1234 5678 9123 0000"></input>
+        <input id="cardNumber" placeholder="e.g. 1234 5678 9123 0000"></input>
+        
 
-        <div class="squished-inputs">
+        <div id="ExpiryMonth" class="squished-inputs">
 
           <div class="exp-date">
             <p>Exp. Date (MM/YY)</p>
             <div class="inputs">
-              <input placeholder="MM"></input>
-              <input placeholder="YY"></input>
+              <input id="expiryMonth" placeholder="MM"></input>
+              
+              <input id="expiryYear" placeholder="YY"></input>
+              
             </div>
           </div>
 
-          <div class="cvc">
+          <div id="cvc" class="cvc">
             <p>CVC</p>
             <div class="input">
               <input placeholder="e.g. 123"></input>
@@ -85,5 +89,6 @@
       </div>
     </div>  
   </div>
+  <script src="formValidation.js"></script>  
 </body>
 </html>

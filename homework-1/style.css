@@ -11,6 +11,13 @@ body{
     background-color: white;   
 }
 
+/* JS errors */
+
+.whitespace span{
+    color: red;
+    font-size: 10px;
+}
+
 /* I started out with desktop design */
 
 .wrapper{
@@ -128,12 +135,12 @@ body{
     color: hsl(278, 68%, 11%);
     font-size: 16px;
     box-sizing: border-box;
-    margin-bottom: 22px;
     width: 100%;
     padding: 10px;
     border: 1px solid hsl(270, 3%, 87%);
     background-color: transparent;
     border-radius: 5px;
+    margin-bottom: 22px;
 }
 
 .whitespace .form input::placeholder{
@@ -244,7 +251,7 @@ body{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
+        align-items: center;  
     }
 
     .whitespace .form{
@@ -254,6 +261,7 @@ body{
         flex-direction: column;
         flex-grow: .6;
         justify-content: space-between;
+        z-index: 10000; /* Without that the first input can't be clicked, because the margin of front card is on top*/
     }
 
     .whitespace .form > input{
