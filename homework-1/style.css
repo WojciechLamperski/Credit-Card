@@ -42,8 +42,7 @@ body{
     height: 221px;   
     justify-content: flex-start;
     top: calc(50% + 20px);
-    display: flex;
-    left: 18%;
+    margin-left: 20px;
 }
 
 .number{
@@ -77,6 +76,7 @@ body{
     flex-direction: column;
     box-sizing: border-box;
     padding: 30px 30px 10px 30px;
+    margin-left: -45px;
 }
 
 .card-front .logo{
@@ -198,17 +198,26 @@ body{
 @media screen and (max-width: 1280px) {
 
     .card-back{
-        left: 30px;
+        left: 20px;
     }
     
     .card-front{
-        left: 10px
+        left: 80px
     }
 }
 
 @media screen and (max-width: 992px) {
 
     /* Changing orientation of the website from left-rigth to top-bottom*/
+
+    .card-back, .card-front{
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        overflow: hidden;
+        margin: 0;
+    }
 
     .wrapper{
         min-height: 100vh;
@@ -243,6 +252,7 @@ body{
         min-width: 100%;
         display: flex;
         flex-direction: column;
+        flex-grow: .6;
         justify-content: space-between;
     }
 
@@ -269,14 +279,6 @@ body{
         scale: .71;
     }
 
-    .card-back, .card-front{
-        
-        top: 0;
-        bottom: 0;
-        right: 0;
-        overflow: hidden;
-    }
-
     .card-back{
         position: initial;
         align-self: flex-end;
@@ -288,63 +290,4 @@ body{
         margin-top: -95px;
     }
 
-}
-
-@media screen and (max-width: 600px){
-
-}
-
-@media screen and (max-width: 480px){
-
-    .whitespace{
-        min-width: 100%;
-        padding-top: 60px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .whitespace .form{
-        max-width: none;
-        min-width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        flex-grow: 0.6;
-    }
-
-    /* Scaling and adjusting position of cards*/
-
-    .card-wrapper{
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        width: 130%;
-        min-height: 100%;
-        box-sizing: border-box;
-        scale: .71;
-    }
-
-    .card-back, .card-front{
-        
-        top: 0;
-        bottom: 0;
-        right: 0;
-        overflow: hidden;
-    }
-
-    .card-back{
-        position: initial;
-        align-self: flex-end;
-    }
-
-    .card-front{
-        position: initial;
-        align-self: flex-start;
-        margin-top: -95px;
-    }
 }
