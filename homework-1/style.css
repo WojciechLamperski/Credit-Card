@@ -1,0 +1,350 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: white;   
+}
+
+/* I started out with desktop design */
+
+.wrapper{
+    min-height: 100vh;
+    display: flex;
+}
+
+.background{
+    background-color: darkmagenta;
+    min-width: 480px;
+    background-image: url(images/bg-main-desktop.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Card back styling */
+
+.card-back{  
+    position: absolute;
+    background-color: transparent;
+    background-image: url(images/bg-card-back.png);
+    background-size: contain;
+    color: white;
+    width: 403px;
+    height: 221px;   
+    justify-content: flex-start;
+    top: calc(50% + 20px);
+    display: flex;
+    left: 18%;
+}
+
+.number{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.number p{
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    top: 97px;
+    left: 320px;
+}
+
+
+/* Card front styling */
+
+.card-front{
+    position: absolute;
+    background-color: transparent;
+    background-image: url(images/bg-card-front.png);
+    background-size: contain;
+    color: white;
+    width: 403px;
+    height: 221px;   
+    justify-content: flex-start;
+    bottom: calc(50% + 20px);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 30px 30px 10px 30px;
+}
+
+.card-front .logo{
+    margin-bottom: 40px;
+}
+
+.card-front span{
+    letter-spacing: 3px;
+    font-size: 24px;
+    word-spacing: 6px;
+}
+
+.card-front .month-year{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 25px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Whitespace and form */
+
+.whitespace{
+    background-color: whitesmoke;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.whitespace .form{
+    max-width: 400px;
+    background: transparent;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.whitespace .form p{
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: hsl(278, 68%, 11%);
+}
+
+.whitespace .form input{
+    color: hsl(278, 68%, 11%);
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 22px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid hsl(270, 3%, 87%);
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.whitespace .form input::placeholder{
+    color: lightgray;
+    padding-left: 5px;
+}
+
+.whitespace .form button{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: hsl(278, 68%, 11%);
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+}
+
+.whitespace .squished-inputs{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.whitespace .squished-inputs .exp-date{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.inputs{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.inputs input{
+    width: 38%;
+}
+
+.inputs input:first-child{
+    margin-right: 20px;
+}
+
+.cvc{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.cvc .input{
+    display: flex;
+    width: 100%;
+}
+
+.input input{
+    width: 100%;
+}
+
+/* Media Queries for smaller devices*/
+
+
+@media screen and (max-width: 1280px) {
+
+    .card-back{
+        left: 30px;
+    }
+    
+    .card-front{
+        left: 10px
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    /* Changing orientation of the website from left-rigth to top-bottom*/
+
+    .wrapper{
+        min-height: 100vh;
+        grid-template-columns: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .background{
+        position: relative;
+        background-color: darkmagenta;
+        min-width: 100%;
+        min-height: 250px;
+        background-image: url(images/bg-main-mobile.png);
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: center;
+    }
+
+    .whitespace{
+        min-width: 100%;
+        padding-top: 60px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .whitespace .form{
+        max-width: none;
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .whitespace .form > input{
+        width: 100%;
+    }
+
+    .whitespace .form{
+        min-height: 100%;
+        
+    }
+
+    /* Scaling and adjusting position of cards*/
+
+    .card-wrapper{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 130%;
+        min-height: 100%;
+        box-sizing: border-box;
+        scale: .71;
+    }
+
+    .card-back, .card-front{
+        
+        top: 0;
+        bottom: 0;
+        right: 0;
+        overflow: hidden;
+    }
+
+    .card-back{
+        position: initial;
+        align-self: flex-end;
+    }
+
+    .card-front{
+        position: initial;
+        align-self: flex-start;
+        margin-top: -95px;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+
+}
+
+@media screen and (max-width: 480px){
+
+    .whitespace{
+        min-width: 100%;
+        padding-top: 60px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .whitespace .form{
+        max-width: none;
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 0.6;
+    }
+
+    /* Scaling and adjusting position of cards*/
+
+    .card-wrapper{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 130%;
+        min-height: 100%;
+        box-sizing: border-box;
+        scale: .71;
+    }
+
+    .card-back, .card-front{
+        
+        top: 0;
+        bottom: 0;
+        right: 0;
+        overflow: hidden;
+    }
+
+    .card-back{
+        position: initial;
+        align-self: flex-end;
+    }
+
+    .card-front{
+        position: initial;
+        align-self: flex-start;
+        margin-top: -95px;
+    }
+}
