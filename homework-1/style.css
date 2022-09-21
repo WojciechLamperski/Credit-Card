@@ -265,6 +265,10 @@ body{
         
     }
 
+    .whitespace .form p, .whitespace .form input{
+        font-size: 13px;
+    }
+
     /* Scaling and adjusting position of cards*/
 
     .card-wrapper{
