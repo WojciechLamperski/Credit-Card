@@ -37,10 +37,10 @@
             </div>
 
             <span>0000 0000 0000 0000</span>
-
+            
             <div class="month-year">
               <p>Jane Appleseed</p>
-              <p>00/00</p>
+              <p><span>00</span>/<span>00<span></p>
             </div>
 
         </div>
@@ -53,42 +53,47 @@
 
     <div class="whitespace">
 
-      <div class="form">
+      <form action="/">
 
-        <p>Cardholder Name</p>
-        <input id="cardHolderName" placeholder="e.g. Jane Appleseed"></input>
-        
+        <label>Cardholder Name</label>
+        <input id="cardHolderName" maxlength="30" placeholder="e.g. Jane Appleseed" type="text" required></input>
+        <p class="error " id="errorName"></p>
 
-        <p>Card Number</p>
-        <input id="cardNumber" placeholder="e.g. 1234 5678 9123 0000"></input>
-        
+        <label>Card Number</label>
+        <input id="cardNumber" maxlength="16" placeholder="e.g. 1234 5678 9123 0000" required type="text"></input>
+        <p class="error " id="errorNumber"></p>
 
         <div id="ExpiryMonth" class="squished-inputs">
 
           <div class="exp-date">
-            <p>Exp. Date (MM/YY)</p>
+            <label>Exp. Date (MM/YY)</label>
             <div class="inputs">
-              <input id="expiryMonth" placeholder="MM"></input>
               
-              <input id="expiryYear" placeholder="YY"></input>
-              
+              <input id="expiryMonth" placeholder="MM" type="text" maxlength="2" required ></input>
+              <input id="expiryYear"  placeholder="YY" type="text" maxlength="2" required></input>
+            </div>
+            <div class="errors-month-year">
+              <p class="error" id="errorMonthYear"></p>
             </div>
           </div>
 
-          <div id="cvc" class="cvc">
-            <p>CVC</p>
+          <div class="cvc">
+            <label>CVC</label>
             <div class="input">
-              <input placeholder="e.g. 123"></input>
+              <input id="cvc" class="cvc" maxlength="3" placeholder="e.g. 123" type="text" required></input>
+            </div>
+            <div class="errors-cvc">
+              <p class="error" id="errorCVC"></p>
             </div> 
           </div>
 
         </div> 
 
-        <button>Confirm</button>  
+        <button type="submit">Confirm</button>  
 
-      </div>
+      </form>
     </div>  
   </div>
-  <script src="formValidation.js"></script>  
+  <script src="creditCardValidation.js"></script>  
 </body>
 </html>

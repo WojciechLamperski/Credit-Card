@@ -13,9 +13,11 @@ body{
 
 /* JS errors */
 
-.whitespace span{
+.error{
     color: red;
-    font-size: 10px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    min-height: 15px;
 }
 
 /* I started out with desktop design */
@@ -90,7 +92,7 @@ body{
     margin-bottom: 40px;
 }
 
-.card-front span{
+.card-front > span{
     letter-spacing: 3px;
     font-size: 24px;
     word-spacing: 6px;
@@ -117,40 +119,40 @@ body{
     justify-content: center;
 }
 
-.whitespace .form{
+.whitespace form{
     max-width: 400px;
     background: transparent;
     padding: 20px;
     box-sizing: border-box;
 }
 
-.whitespace .form p{
+.whitespace form label{
     margin-bottom: 5px;
     letter-spacing: 2px;
     font-size: 14px;
     color: hsl(278, 68%, 11%);
 }
 
-.whitespace .form input{
+.whitespace form input{
     color: hsl(278, 68%, 11%);
     font-size: 16px;
     box-sizing: border-box;
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     border: 1px solid hsl(270, 3%, 87%);
     background-color: transparent;
     border-radius: 5px;
-    margin-bottom: 22px;
+    margin-bottom: 10px;
 }
 
-.whitespace .form input::placeholder{
+.whitespace form input::placeholder{
     color: lightgray;
     padding-left: 5px;
 }
 
-.whitespace .form button{
+.whitespace form button{
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     border: none;
     background-color: hsl(278, 68%, 11%);
     border-radius: 5px;
@@ -182,6 +184,17 @@ body{
 .inputs input:first-child{
     margin-right: 20px;
 }
+
+
+.errors-month-year{
+    display: flex;
+    margin-left: 10px;
+}
+
+.errors-month-year .error{
+    flex-grow: 1;
+}
+
 
 .cvc{
     display: flex;
@@ -254,7 +267,7 @@ body{
         align-items: center;  
     }
 
-    .whitespace .form{
+    .whitespace form{
         max-width: none;
         min-width: 100%;
         display: flex;
@@ -264,16 +277,16 @@ body{
         z-index: 10000; /* Without that the first input can't be clicked, because the margin of front card is on top*/
     }
 
-    .whitespace .form > input{
+    .whitespace form > input{
         width: 100%;
     }
 
-    .whitespace .form{
+    .whitespace form{
         min-height: 100%;
         
     }
 
-    .whitespace .form p, .whitespace .form input{
+    .whitespace form label, .whitespace form input{
         font-size: 13px;
     }
 
